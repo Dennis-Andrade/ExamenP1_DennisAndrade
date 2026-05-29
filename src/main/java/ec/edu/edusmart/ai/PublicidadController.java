@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/edusmart")
 public class PublicidadController {
 
-    private final EduSmartAiService eduSmartAiService;
+    private final EduSmartAIService eduSmartAIService;
 
-    public PublicidadController(EduSmartAiService eduSmartAiService) {
-        this.eduSmartAiService = eduSmartAiService;
+    public PublicidadController(EduSmartAIService eduSmartAIService) {
+        this.eduSmartAIService = eduSmartAIService;
     }
 
     @GetMapping("/publicidad")
     public String generarPublicidad(@RequestParam String nombreCurso, @RequestParam String publicoObjetivo) {
-        return eduSmartAiService.generarPublicidad(nombreCurso, publicoObjetivo);
+        return eduSmartAIService.generarPublicidad(nombreCurso, publicoObjetivo);
     }
 }
