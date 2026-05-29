@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: edusmart-postgres-14
+    environment:
+      POSTGRES_DB: edusmart_db
+      POSTGRES_USER: edusmart_user
+      POSTGRES_PASSWORD: edusmart_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - edusmart_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  edusmart_postgres_data:
